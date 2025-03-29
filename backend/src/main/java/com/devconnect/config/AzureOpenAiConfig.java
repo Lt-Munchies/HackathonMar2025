@@ -5,13 +5,15 @@ import com.azure.ai.openai.OpenAIClientBuilder;
 import com.azure.core.credential.AzureKeyCredential;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Slf4j
 @Configuration
+@ConditionalOnProperty(name = "azure.openai.enabled", havingValue = "true", matchIfMissing = false)
 public class AzureOpenAiConfig {
-    @Value("${azure.openai.api-key}")
+    @Value("${azure.openai.key}")
     private String apiKey;
 
     @Value("${azure.openai.endpoint}")

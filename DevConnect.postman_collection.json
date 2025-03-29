@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "d8f9e8c7-b6a5-4f3d-9e1c-1d2b3c4d5e6f",
+		"name": "DevConnect API",
+		"description": "Developer Q&A Platform with AI Integration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Get All Posts",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "http://localhost:8081/api/posts?page=0",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8081",
+							"path": ["api", "posts"],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Post by ID",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "http://localhost:8081/api/posts/{{postId}}",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8081",
+							"path": ["api", "posts", "{{postId}}"]
+						}
+					}
+				},
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/posts",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8081",
+							"path": ["api", "posts"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": {
+								"title": "Example Post Title",
+								"content": "This is the main content of the post",
+								"authorId": "550e8400-e29b-41d4-a716-446655440000",
+								"authorAlias": "john_doe",
+								"codeBlocks": [
+									{
+										"content": "console.log('Hello World');",
+										"language": "javascript",
+										"position": 0,
+										"foldingRanges": [
+											{
+												"startLine": 0,
+												"endLine": 0,
+												"kind": "codeblock",
+												"label": "Example Code"
+											}
+										]
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/posts/{{postId}}",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8081",
+							"path": ["api", "posts", "{{postId}}"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": {
+								"title": "Updated Post Title",
+								"content": "This is the updated content of the post",
+								"authorId": "550e8400-e29b-41d4-a716-446655440000",
+								"authorAlias": "john_doe",
+								"codeBlocks": [
+									{
+										"content": "console.log('Updated Example');",
+										"language": "javascript",
+										"position": 0,
+										"foldingRanges": [
+											{
+												"startLine": 0,
+												"endLine": 0,
+												"kind": "codeblock",
+												"label": "Updated Code"
+											}
+										]
+									}
+								]
+							}
+						}
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "postId",
+			"value": "550e8400-e29b-41d4-a716-446655440000",
+			"type": "string"
+		}
+	]
+}
