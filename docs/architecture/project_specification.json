@@ -1,0 +1,112 @@
+{
+  "project_name": "DevConnect",
+  "version": "1.0.0",
+  "architecture": {
+    "frontend": {
+      "platform": "Android",
+      "technology": "Kotlin",
+      "main_components": {
+        "screens": {
+          "main_feed": {
+            "components": [
+              "Question List",
+              "Search Bar",
+              "Filter Options",
+              "Create Question FAB"
+            ],
+            "features": [
+              "Infinite Scroll",
+              "Pull to Refresh",
+              "Sort by Latest/Popular"
+            ]
+          },
+          "question_detail": {
+            "components": [
+              "Question Content",
+              "Code Blocks",
+              "AI Answer Section",
+              "Comments Section"
+            ],
+            "features": [
+              "Syntax Highlighting",
+              "Copy Code Snippet",
+              "Share Question"
+            ],
+            "ai_answer_display": {
+              "sections": [
+                "Solution Summary",
+                "Code Example",
+                "Explanation",
+                "Best Practices"
+              ]
+            }
+          },
+          "post_question": {
+            "components": [
+              "Title Input",
+              "Description Editor",
+              "Code Block Editor",
+              "Programming Language Selector"
+            ],
+            "features": [
+              "Auto AI Answer Generation",
+              "Code Formatting",
+              "Preview Post"
+            ]
+          }
+        }
+      }
+    },
+    "backend": {
+      "api_structure": {
+        "questions": {
+          "endpoints": [
+            "/api/questions/list",
+            "/api/questions/create",
+            "/api/questions/{id}",
+            "/api/questions/search"
+          ]
+        },
+        "ai_integration": {
+          "endpoints": [
+            "/api/ai/generate-initial-answer",
+            "/api/ai/enhance-answer"
+          ]
+        }
+      }
+    },
+    "ai_service": {
+      "post_creation_flow": {
+        "steps": [
+          "Receive question and code",
+          "Analyze question context",
+          "Generate comprehensive answer",
+          "Format response with code examples",
+          "Store question and AI response"
+        ],
+        "response_format": {
+          "structure": [
+            "Problem Understanding",
+            "Solution Code",
+            "Detailed Explanation",
+            "Additional Considerations"
+          ]
+        }
+      }
+    }
+  },
+  "data_models": {
+    "question": {
+      "fields": [
+        "id",
+        "title",
+        "content",
+        "code_blocks",
+        "programming_language",
+        "created_at",
+        "ai_response",
+        "view_count"
+      ]
+    }
+  }
+}
